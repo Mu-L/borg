@@ -37,6 +37,10 @@ class HelpMixIn:
             start with ``src``.
           - On native Windows, archived absolute paths look like ``C/Windows/System32``.
 
+        - When using the slashdot hack, patterns match against the unstripped path,
+          i.e., when you back up ``/this/gets/stripped/./this/gets/archived``,
+          patterns must match ``this/gets/stripped/this/gets/archived``.
+
         Borg supports different pattern styles. To define a non-default
         style for a specific pattern, prefix it with two characters followed
         by a colon ':' (i.e. ``fm:path/*``, ``sh:path/**``).
